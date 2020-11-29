@@ -1,0 +1,30 @@
+<div class="modal-content">
+     <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">
+               <p class="lang" key="lenguaje">Seleccionar Lenguaje</p>
+          </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+          </button>
+     </div>
+     <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+               <select class="form-control " id="btnlang" onchange="myFunction()">
+                    <option id="en" value="en">English</option>
+                    <option id="es" value="es">Español</option>
+               </select>
+               <script>
+                    function myFunction() {
+                         var x = document.getElementById("btnlang").value;
+                         document.getElementById("translate").lang = x;
+                    }
+               </script>
+          </div>
+     </div>
+     <div class="modal-footer d-flex justify-content-center">
+          <button type="submit" class="btn btn-info shadow-none rounded-pill " data-toggle="modal" id="translate"
+               lang="en" data-dismiss="modal">
+               <p class="lang" key="guardar">Guardar</p>
+          </button>
+     </div>
+</div>

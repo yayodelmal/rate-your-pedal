@@ -1,0 +1,118 @@
+                        body {
+                            padding: 0px;
+                            font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+                        }
+                        
+                        a {
+                            color: #00B7FF;
+                        }
+                        
+                        p {
+                            margin-bottom: 0;
+                        }
+                        
+                        .img-full {
+                            display: block;
+                        }
+                        
+                        .img-short {
+                            display: none;
+                        }
+                        
+                        @media (max-width: 800px) and (min-width: 320px) {
+                            .img-full {
+                                display: none;
+                            }
+                            .img-short {
+                                display: block;
+                            }
+                        }
+                        
+                        .navbarcontainer {
+                            background-image: url("/images/fade3.jpg");
+                            background-size: cover;
+                            min-height: 100vh;
+                            background-repeat: no-repeat;
+                        }
+                        
+                        @media (max-width: 800px) and (min-width: 320px) {
+                            .navbarcontainer {
+                                background-image: url("/images/fade2.jpg");
+                                display: block;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                position: relative;
+                                background-position: center;
+                                height: 4;
+                            }
+                        }
+                        
+                        .nabvar .navbarcontainer {
+                            background-color: transparent !important;
+                        }
+                        
+                        .navbar-light .navbar-nav .nav-link {
+                            color: #00B7FF;
+                            font-weight: bold;
+                        }
+                        
+                        .navbar-light .navbar-nav .nav-link:focus,
+                        .navbar-light .navbar-nav .nav-link:hover {
+                            color: #fc8600;
+                            text-decoration-line: underline;
+                            font-size: 1rem;
+                        }
+                        
+                        .btn-link {
+                            color: #00B7FF;
+                            font-weight: bold;
+                            padding-left: 0px
+                        }
+                        
+                        .btn-link:hover {
+                            color: #00B7FF;
+                            text-decoration-line: underline;
+                            font-size: 1rem;
+                        }
+                        
+                        .btn-link:hover:focus,
+                        .btn-link:hover:hover {
+                            color: #fc8600;
+                        }
+                        
+                        .navbar-toggler {
+                            background-color: #ebebeba4;
+                        }
+                        
+                        .navbar:hover {
+                            background-color: #14131381;
+                        }
+                        
+                        .modal-content {
+                            border-radius: 15px;
+                            font-family: 'Lato', sans-serif;
+                        }
+                        
+                        .modal-footer .btn {
+                            outline: none;
+                            background: rgba(64, 180, 194, 100);
+                            color: white;
+                            padding: 4px;
+                            cursor: pointer;
+                            border-color: #40b4c2;
+                            border-radius: 10px;
+                            font-size: 1em;
+                            width: 20%;
+                        }
+                        
+                        .modal-title {
+                            color: #ff6200;
+                        }
+                        
+                        .form-control:focus {
+                            color: #495057;
+                            background-color: #fff;
+                            border-color: #40b4c2;
+                            outline: 0;
+                            box-shadow: 0 0 0 .1rem #40b5c26c;
+                        }

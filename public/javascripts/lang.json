@@ -1,0 +1,16 @@
+{
+    "es": {
+        "signup": "Registrarse",
+        "guardar": "Guardar",
+        "lenguaje": "Seleccionar Lenguaje",
+        "signin": "Iniciar Sesión",
+        "remail": "Repetir Email"
+    },
+    "en": {
+        "signup": "SignUp",
+        "guardar": "Save",
+        "lenguaje": "Select Languaje",
+        "signin": "SignIn",
+        "remail": "Repeat Email"
+    }
+}
