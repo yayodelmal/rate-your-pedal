@@ -50,7 +50,8 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 //rutas
 
 app.use(require('./routes/index'));
-
+app.use(require('./routes/dashboard'));
+app.use(require('./routes/authentication'));
 
 
 // catch 404 and forward to error handler

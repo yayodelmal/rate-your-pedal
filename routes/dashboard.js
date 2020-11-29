@@ -3,9 +3,8 @@ let router = express.Router();
 
 const pool = require('../db');
 
-router.get('/add', (req, res) => {
-    res.render('profile/add');
+router.get('/dashboard', (req, res) => {
+    res.render('profile/dashboard');
 });
-
 
 module.exports = router;
