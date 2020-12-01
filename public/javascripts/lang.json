@@ -3,14 +3,20 @@
         "signup": "Registrarse",
         "guardar": "Guardar",
         "lenguaje": "Seleccionar Lenguaje",
+        "Lenguajenav": "Lenguaje",
         "signin": "Iniciar Sesión",
-        "remail": "Repetir Email"
+        "remail": "Repetir Email",
+        "getyour": "Que estas buscando?",
+        "hotsale": "Pedales con descuento"
     },
     "en": {
         "signup": "SignUp",
         "guardar": "Save",
         "lenguaje": "Select Languaje",
+        "Lenguajenav": "Languaje",
         "signin": "SignIn",
-        "remail": "Repeat Email"
+        "remail": "Repeat Email",
+        "getyour": "What do you looking for?",
+        "hotsale": "Hot Sale Pedals"
     }
 }

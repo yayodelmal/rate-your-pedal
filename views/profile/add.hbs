@@ -3,40 +3,76 @@
           <div class="col-md-9 mx-auto">
                <div class="card">
                     <div class="card-body">
-                         <form action="/profile/add" method="POST">
+                         <form action="/dashboard/add" method="POST">
                               <div class="form-group">
                                    <label for="exampleFormControlInput1">Title</label>
                                    <input type="text" name="title" class="form-control" placeholder="Your Title"
                                         autofocus>
                               </div>
                               <div class="form-group">
-                                   <label for="exampleFormControlSelect1">Pedal Type</label>
-                                   <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>pedal1</option>
-                                        <option>pedal2</option>
-                                        <option>pedal3</option>
-                                        <option>pedal4</option>
+                                   <label for="exampleFormControlSelect1">Pedal brand</label>
+                                   <select class="form-control" name="Brand" id="exampleFormControlSelect1">
+                                        <option hidden selected>Brand</option>
+                                        <option value="Boss">Boss</option>
+                                        <option value="EarthQuacker Devices">EarthQuacker Devices</option>
+                                        <option value="Keeley Electronics">Keeley Electronics</option>
+                                        <option value="Diamond">Diamond</option>
+                                        <option value="Fender">Fender</option>
+                                        <option value="JHS">JHS</option>
+                                        <option value="Tc Electronic">Tc Electronic</option>
+                                        <option value="Strymon">Strymon</option>
+                                        <option value="MXR">MXR</option>
+                                        <option value="Ibanez">Ibanez</option>
+                                        <option value="Mooer">Mooer</option>
+                                        <option value="Xotic">Xotic</option>
+                                        <option value="Catalinbread">Catalinbread</option>
+                                        <option value="Other">Other</option>
                                    </select>
                               </div>
+                              <div class="form-group">
+                                   <label for="exampleFormControlInput1">Type</label>
+                                   <input type="text" name="type" class="form-control" placeholder="Pedal Type"
+                                        autofocus>
+                              </div>
+                              <div class="form-group">
+                                   <label for="exampleFormControlInput1">Model</label>
+                                   <input type="text" name="model" class="form-control" placeholder="Pedal Model"
+                                        autofocus>
+                              </div>
+                              <div class="form-group">
+                                   <label for="exampleFormControlSelect1">Pedal Status</label>
+                                   <select class="form-control" name="status" id="exampleFormControlSelect1">
+                                        <option hidden selected>Status</option>
+                                        <option value="new">New</option>
+                                        <option value="used">Used</option>
+                                        <option value="repaired">Repaired</option>
+                                   </select>
+                              </div>
+                              <div class="form-group">
+                                   <label for="exampleFormControlInput1">Price in$USD</label>
+                                   <input type="text" name="price" class="form-control" placeholder="10">
+                              </div>
                               <label for="exampleFormControlInput1">Description</label>
-                              <textarea name="description" rows="2" class="form-control"
+                              <textarea name="description" name="description" rows="2" class="form-control"
                                    placeholder="Your description"></textarea>
                     </div>
                     <form>
                          <div class="form-group">
                               <label for="exampleFormControlFile1">Upload Image</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                              <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
                          </div>
                          <div class="form-group">
-                              <label for="exampleFormControlFile1">Upload Track</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                              <label for="exampleFormControlFile1">Upload Track Sample</label>
+                              <input type="file" class="form-control-file" name="track" id="exampleFormControlFile1">
+                         </div>
+
+                         <div class="form-group">
+                              <button class="btn btn-success btn-block">
+                                   Save
+                              </button>
                          </div>
                     </form>
-                    <div class="form-group">
-                         <button class="btn btn-success btn-block">
-                              Save
-                         </button>
-                    </div>
+
                     </form>
                </div>
           </div>
