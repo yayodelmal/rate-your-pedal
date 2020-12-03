@@ -1,4 +1,3 @@
-// jshint ignore: start
 let express = require('express');
 let router = express.Router();
 
@@ -14,21 +13,20 @@ router.get('/dashboard/add', (req, res) => {
 });
 
 router.post('/dashboard/add', async(req, res) => {
-    const { title, brand, type, model, status, price, description, image, track } = req.body;
+    const { rp_titulo, rp_marca, rp_tipo, rp_modelo, rp_estado, rp_precio, rp_descripcion, rp_img1, rp_demo } = req.body;
     const newLink = {
-        title,
-        brand,
-        type,
-        model,
-        status,
-        price,
-        description,
-        image,
-        track
+        rp_titulo,
+        rp_marca,
+        rp_tipo,
+        rp_modelo,
+        rp_estado,
+        rp_precio,
+        rp_descripcion,
+        rp_img1,
+        rp_demo
     };
     await pool.query('INSERT INTO ryp_pedal set ?', [newLink]);
     res.send('recibido');
 });
-
 
 module.exports = router;

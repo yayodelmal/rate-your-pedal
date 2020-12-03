@@ -5,7 +5,7 @@
           host: 'localhost',
           user: 'root',
           password: ',.-u8n6i4x9/*-',
-          database: 'ryp_login'
+          database: 'rate_your_pedal'
       }
 
   };
