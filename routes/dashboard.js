@@ -34,4 +34,11 @@ router.get('/dashboard/sales', async(req, res) => {
     res.render('profile/sales', { sales });
 });
 
+router.get('/dashboard/sales/delete/:id_pedal', async(req, res) => {
+    const { id_pedal } = req.params;
+    await pool.query('DELETE FROM ryp_pedal WHERE id_pedal = ?', [id_pedal]);
+    res.redirect('/dashboard/sales');
+});
+
+
 module.exports = router;
