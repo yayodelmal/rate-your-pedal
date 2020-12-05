@@ -26,7 +26,12 @@ router.post('/dashboard/add', async(req, res) => {
         rp_demo
     };
     await pool.query('INSERT INTO ryp_pedal set ?', [newLink]);
-    res.send('recibido');
+    res.redirect('/dashboard/sales');
+});
+
+router.get('/dashboard/sales', async(req, res) => {
+    const sales = await pool.query('SELECT * FROM ryp_pedal ');
+    res.render('profile/sales', { sales });
 });
 
 module.exports = router;

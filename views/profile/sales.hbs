@@ -1,0 +1,27 @@
+<div class="container p-4">
+     <div class="row">
+          {{#each sales}}
+          <div class="mb-1 col-md-4">
+               <div class="card text-center" id="container">
+                    <div class="card-body">
+                         <a href="{{rp_marca}}">
+                              <h3 class="card-title text-uppercase" id="titleSales">
+                                   {{rp_marca}} {{rp_modelo}}
+                              </h3>
+                         </a>
+                         <p class="m-2" id="salesText">{{rp_titulo}}</p>
+                         <p class="text-muted" id="salesTime">
+                              {{timeago rp_created}}
+                         </p>
+                         <a class="btn btn-danger" href="/links/delete/{{id}}">
+                              Delete
+                         </a>
+                         <a class="btn btn-secondary" href="/links/edit/{{id}}">
+                              Edit
+                         </a>
+                    </div>
+               </div>
+          </div>
+          {{/each}}
+     </div>
+</div>
