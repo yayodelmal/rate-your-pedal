@@ -1,4 +1,5 @@
 <div class="container p-4">
+     <h1>Your Sales</h1>
      <div class="row">
           {{#each sales}}
           <div class="mb-1 col-md-4">
@@ -13,10 +14,36 @@
                          <p class="text-muted" id="salesTime">
                               {{timeago rp_created}}
                          </p>
-                         <a class="btn btn-danger" href="/dashboard/sales/delete/{{id_pedal}}">
-                              Delete
+                         <a class="btn btn-danger" id="btnDanger" data-toggle="modal" data-target="#deleteModal">
+                              <span class="lang" key="eliminar">Eliminar</span>
                          </a>
-                         <a class="btn btn-secondary" href="/dashboard/sales/edit/{{id_pedal}}">
+                         <!-- Modal -->
+                         <div class="modal fade" id="deleteModal" role="dialog">
+                              <div class="modal-dialog">
+                                   <!-- Modal content-->
+                                   <div class="modal-content">
+                                        <div class="modal-header text-center">
+                                             <h4 class="modal-title w-100 font-weight-bold">Eliminar Publicación</h4>
+                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                             <p>¿Esta seguro? Esta acción no se puede revertir!!</p>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-center">
+                                             <button type="submit" id="btnEliminarPub"
+                                                  class="btn btn-info shadow-none rounded-pill " data-toggle="modal"
+                                                  id="translate" lang="en" data-dismiss="modal"
+                                                  onclick="window.location.href='/dashboard/sales/delete/{{id_pedal}}';">
+                                                  <p><span class="lang" key="eliminar">Eliminar</span></p>
+                                             </button>
+                                             <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                  id="btnClose">Close</button>
+                                        </div>
+                                   </div>
+
+                              </div>
+                         </div>
+                         <a class="btn btn-secondary" id="btnSecondary" href="/dashboard/sales/edit/{{id_pedal}}">
                               Edit
                          </a>
                     </div>

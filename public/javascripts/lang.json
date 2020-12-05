@@ -7,7 +7,11 @@
         "signin": "Iniciar Sesión",
         "remail": "Repetir Email",
         "getyour": "Que estas buscando?",
-        "hotsale": "Pedales con descuento"
+        "hotsale": "Pedales con descuento",
+        "elmininar": "Eliminar",
+        "editar": "Editar"
+
+
     },
     "en": {
         "signup": "SignUp",
@@ -17,6 +21,8 @@
         "signin": "SignIn",
         "remail": "Repeat Email",
         "getyour": "What do you looking for?",
-        "hotsale": "Hot Sale Pedals"
+        "hotsale": "Hot Sale Pedals",
+        "eliminar": "Delete",
+        "editar": "Edit"
     }
 }

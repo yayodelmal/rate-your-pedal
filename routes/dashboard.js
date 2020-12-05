@@ -40,5 +40,11 @@ router.get('/dashboard/sales/delete/:id_pedal', async(req, res) => {
     res.redirect('/dashboard/sales');
 });
 
+router.get('/dashboard/sales/edit/:id_pedal', async(req, res) => {
+    const { id_pedal } = req.params;
+    const edit = await pool.query('SELECT * FROM ryp_pedal WHERE id_pedal = ?', [id_pedal]);
+    console.log(edit[0]);
+    res.render('profile/edit', { edit: edit[0] });
+});
 
 module.exports = router;

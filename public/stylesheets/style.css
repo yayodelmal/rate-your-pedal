@@ -111,7 +111,7 @@
                                     font-family: 'Lato', sans-serif;
                                 }
                                 
-                                .modal-footer .btn {
+                                #modalNav .btn {
                                     outline: none;
                                     background: rgba(64, 180, 194, 100);
                                     color: white;
@@ -144,6 +144,7 @@
                                     color: #ff6200;
                                     font-family: 'Lato', sans-serif;
                                     font-weight: bold;
+                                    text-align: center;
                                 }
                                 
                                 #getyour {
@@ -163,6 +164,27 @@
                                     color: #40b4c2;
                                 }
                                 
+                                #btnEliminarPub {
+                                    outline: none;
+                                    background: #ff0000ab;
+                                    color: white;
+                                    padding: 4px;
+                                    cursor: pointer;
+                                    border-color: #ca0000ab;
+                                    border-radius: 15px;
+                                    font-size: 1em;
+                                    width: 20%;
+                                }
+                                
+                                #btnEliminarPub:hover {
+                                    background: #6e0505;
+                                    text-shadow: 2px 2px 5px #020202;
+                                }
+                                
+                                #btnEliminarPub:active {
+                                    transform: translateY(2px);
+                                }
+                                
                                 #titleb {
                                     font-size: 1rem;
                                     font-weight: bold;
@@ -173,6 +195,18 @@
                                 #salesText {
                                     color: #ffffff;
                                     font-family: 'Lato', sans-serif;
+                                }
+                                
+                                #btnClose {
+                                    outline: none;
+                                    background: rgba(64, 180, 194, 100);
+                                    color: white;
+                                    padding: 4px;
+                                    cursor: pointer;
+                                    border-color: #40b4c2;
+                                    border-radius: 15px;
+                                    font-size: 1em;
+                                    width: 20%;
                                 }
                                 
                                 #btnAdd {
@@ -186,6 +220,7 @@
                                     border-radius: 10px;
                                     font-size: 1em;
                                     width: 25%;
+                                    margin-left: 10px;
                                 }
                                 
                                 #btnAdd {
@@ -200,4 +235,39 @@
                                 
                                 #btnAdd:active {
                                     transform: translateY(2px);
+                                }
+                                
+                                #btnDanger {
+                                    border-radius: 10px;
+                                }
+                                
+                                #btnSecondary {
+                                    border-radius: 10px;
+                                }
+                                
+                                #salesTime {
+                                    margin-bottom: 8px;
+                                }
+                                
+                                #btnCancelar {
+                                    outline: none;
+                                    background: #40b4c2;
+                                    color: white;
+                                    padding: 4px;
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                    border-color: #40b5c2;
+                                    border-radius: 10px;
+                                    font-size: 1em;
+                                    width: 25%;
+                                }
+                                
+                                #btnCancelar {
+                                    transition-duration: 0.5s;
+                                }
+                                
+                                #btnCancelar:hover {
+                                    background: #36949e;
+                                    color: #ffffff;
+                                    text-shadow: 2px 2px 5px #020202;
                                 }
