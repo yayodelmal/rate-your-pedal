@@ -9,12 +9,14 @@ const session = require('express-session');
 const validator = require('express-validator');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
+const mysqlStore = require('express-mysql-session');
+
 
 
 //inicialitation
 const app = express();
 require('./lib/passport');
-
+const { database } = require('./auth');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -27,6 +29,12 @@ app.engine('.hbs', exphbs({
 app.set('view engine', 'hbs');
 
 //middleware
+app.use(session({
+    secret: 'nodesession',
+    resave: 'false',
+    saveUninitialized: 'false',
+    store: new mysqlStore(database)
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,6 +47,8 @@ app.use(flash());
 
 //public
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname, +'/public/javascripts'));
+
 
 // Bootstrap y librerías 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
@@ -46,6 +56,13 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/popper.js/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 
+
+
+//variables globales
+app.use((req, res, next) => {
+    app.locals.success = req.flash('success');
+    next();
+});
 
 //rutas
 

@@ -26,6 +26,7 @@ router.post('/dashboard/add', async(req, res) => {
         rp_demo
     };
     await pool.query('INSERT INTO ryp_pedal set ?', [newLink]);
+    req.flash('success', 'Success');
     res.redirect('/dashboard/sales');
 });
 
@@ -37,6 +38,7 @@ router.get('/dashboard/sales', async(req, res) => {
 router.get('/dashboard/sales/delete/:id_pedal', async(req, res) => {
     const { id_pedal } = req.params;
     await pool.query('DELETE FROM ryp_pedal WHERE id_pedal = ?', [id_pedal]);
+    req.flash('success', 'Success');
     res.redirect('/dashboard/sales');
 });
 
@@ -47,4 +49,22 @@ router.get('/dashboard/sales/edit/:id_pedal', async(req, res) => {
     res.render('profile/edit', { edit: edit[0] });
 });
 
+router.post('/dashboard/sales/edit/:id_pedal', async(req, res) => {
+    const { id_pedal } = req.params;
+    const { rp_titulo, rp_marca, rp_tipo, rp_modelo, rp_estado, rp_precio, rp_descripcion, rp_img1, rp_demo } = req.body;
+    const newLink = {
+        rp_titulo,
+        rp_marca,
+        rp_tipo,
+        rp_modelo,
+        rp_estado,
+        rp_precio,
+        rp_descripcion,
+        rp_img1,
+        rp_demo
+    };
+    await pool.query('UPDATE ryp_pedal  set ? WHERE id_pedal = ?', [newLink, id_pedal]);
+    req.flash('success', 'Success');
+    res.redirect('/dashboard/sales');
+});
 module.exports = router;
