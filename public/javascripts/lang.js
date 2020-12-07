@@ -1,4 +1,4 @@
-$.getJSON(" javascripts/lang.json", function(json) {
+$.getJSON("javascripts/lang.json", function(json) {
     //Lenguaje por defecto de la página sessionStorage.setItem("lang", "idioma")"
     if (!localStorage.getItem("lang")) {
         localStorage.setItem("lang", "en");

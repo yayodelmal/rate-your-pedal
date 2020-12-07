@@ -86,8 +86,10 @@
                          </li>
                          {{else}}
                          <li class="nav-item">
+                              {{!--login--}}
                               <button type="button" class="btn btn-link btn-sm text-left shadow-none"
-                                   data-toggle="modal" aria-controls="navbarNav" data-target="#modalsignin">SignIn
+                                   data-toggle="modal" aria-controls="navbarNav" data-target="#modalsignin"><span
+                                        class="lang" key="signin">SignIn</span>
                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
@@ -127,67 +129,107 @@
                                         </div>
                                    </div>
                               </div>
+                              {{!--fin login--}}
                          </li>
                          <li class="nav-item">
+                              {{!--registro--}}
                               <button type="button" class="btn btn-link btn-sm text-left shadow-none"
-                                   data-toggle="modal" aria-controls="navbarNav" data-target="#modalsingup">SignUp
+                                   data-toggle="modal" aria-controls="navbarNav" data-target="#modalsingup"><span
+                                        class="lang" key="signup">Registrarse</span>
                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                              d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
                                    </svg>
                               </button>
-                              <div class="modal fade" id="modalsingup" tabindex="-1" role="dialog"
-                                   aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog" role="document">
+                              <div class="modal fade" id="modalsingup" tabindex="-1" data-backdrop="static">
+                                   <div class="modal-dialog">
                                         <div class="modal-content">
                                              <div class="modal-header text-center">
                                                   <h4 class="modal-title w-100 font-weight-bold">
-                                                       <p class="lang" key="signup"> SignUp</p>
+                                                       <p class="lang" key="signup"> Registrarse</p>
                                                        <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                        </button>
                                              </div>
                                              <div class="modal-body mx-3">
-                                                  <div class="md-form mb-5">
-                                                       <div class="form-group">
-                                                            <label for="exampleInputEmail1">Email </label>
-                                                            <input type="email" class="form-control"
-                                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                 placeholder="email@email.com">
+                                                  {{!--form registro--}}
+                                                  <form action="/signup" method="POST"
+                                                       oninput='rpass.setCustomValidity(rpass.value != pass.value ? "Los Password no coinciden" : "")'>
+                                                       <div class="md-form mb-5">
+                                                            <div class="form-group">
+                                                                 <label for="inputName"><span class="lang"
+                                                                           key="nombre">nombre</span></label>
+                                                                 <input type="text" name="nombre" class="form-control"
+                                                                      id="inputName" placeholder="Alex" autofocus
+                                                                      required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                 <label for="Inputphone">Email </label>
+                                                                 <input id="InputEmail" name="mail" type="email"
+                                                                      class="form-control"
+                                                                      placeholder="email@email.com">
+                                                            </div>
+                                                            <script type="text/javascript"
+                                                                 src="/node_modules/jquery/dist/jquery.js"></script>
+                                                            <link rel="stylesheet"
+                                                                 href="/public/stylesheets/intlTelInput.css">
+                                                            <script type="text/javascript"
+                                                                 src="/public/javascripts/intlTelInput.js"></script>
+                                                            <div class="form-group">
+                                                                 <label for="phone"><span class="lang"
+                                                                           key="phone">Teléfono</span></label>
+                                                                 <input id="phone" name="fono" type="tel"
+                                                                      class="form-control">
+                                                                 <script>
+                                                                      let input = document.querySelector("#phone");
+                                                                      intlTelInput(input, {
+                                                                           placeholderNumberType: "MOBILE",
+                                                                           initialCountry: "us",
+                                                                           separateDialCode: false,
+                                                                           nationalMode: false,
+                                                                           preferredCountries: ["us", "cl", "es"],
+
+                                                                           geoIpLookup: function (success, failure) {
+                                                                                $.get("https//ipinfo.io", function () { }, "jsonp").always(function (resp) {
+                                                                                     let countryCode = (resp && resp.country) ? resp.country : "";
+                                                                                     success(countryCode);
+                                                                                });
+                                                                           },
+                                                                           utilsScript: "/public/javascripts/utils.js"
+                                                                      });
+                                                                 </script>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                 <label for="inputPass">Password</label>
+                                                                 <input type="password" name="pass" class="form-control"
+                                                                      id="inputPass"
+                                                                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                                      title=" debe contener  al menos un numero , una letra  mayuscula, una letra minuscula y debe ser de almenos 8 caracteres"
+                                                                      placeholder="************" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                 <label for="inputRpass"><span class="lang"
+                                                                           key="rpass">Repetir Password</span></label>
+                                                                 <input type="password" class="form-control"
+                                                                      id="inputRpass" placeholder="************"
+                                                                      required="">
+                                                            </div>
                                                        </div>
                                                        <div class="form-group">
-                                                            <label for="exampleInputEmail2" class="lang"
-                                                                 key="remail">Repeat Email </label>
-                                                            <input type="email" class="form-control"
-                                                                 id="exampleInputEmail2" aria-describedby="emailHelp"
-                                                                 placeholder="email@email.com">
+                                                            <div class="modal-footer d-flex justify-content-center"
+                                                                 id="modalNav">
+                                                                 <button class="btn btn-info shadow-none rounded-pill ">
+                                                                      <p class="lang" key="guardar">Guardar</p>
+                                                                 </button>
+                                                            </div>
                                                        </div>
-                                                       <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="password" class="form-control"
-                                                                 id="exampleInputPassword1" placeholder="Password">
-                                                       </div>
-                                                       <div class="form-group">
-                                                            <label for="exampleInputPassword2">Password</label>
-                                                            <input type="password" class="form-control"
-                                                                 id="exampleInputPassword2" placeholder="Password">
-                                                       </div>
-                                                       <div class="form-check">
-                                                       </div>
-                                                  </div>
-                                                  <div class="modal-footer d-flex justify-content-center" id="modalNav">
-                                                       <button type="submit"
-                                                            class="btn btn-info shadow-none rounded-pill "
-                                                            data-toggle="modal" id="translate" lang="en"
-                                                            data-dismiss="modal">
-                                                            <p class="lang" key="guardar">Guardar</p>
-                                                       </button>
-                                                  </div>
+                                                  </form>
                                              </div>
                                         </div>
                                    </div>
+                                   {{!--fin registro--}}
                          </li>
                          {{/if}}
                     </ul>

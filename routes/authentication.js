@@ -1,11 +1,13 @@
 let express = require('express');
 let router = express.Router();
 
+
+
 const pool = require('../db');
 
-router.get('/add', (req, res) => {
-    res.render('profile/add');
+router.post('/signup', (req, res) => {
+    console.log(req.body);
+    res.send('ok');
 });
-
 
 module.exports = router;

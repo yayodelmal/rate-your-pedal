@@ -17,6 +17,7 @@ const mysqlStore = require('express-mysql-session');
 const app = express();
 require('./lib/passport');
 const { database } = require('./auth');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({

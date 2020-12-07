@@ -1,28 +1,34 @@
 {
     "es": {
         "signup": "Registrarse",
+        "nombre": "Nombre",
         "guardar": "Guardar",
         "lenguaje": "Seleccionar Lenguaje",
         "Lenguajenav": "Lenguaje",
         "signin": "Iniciar Sesión",
         "remail": "Repetir Email",
+        "rpass": "Repetir Password",
         "getyour": "Que estas buscando?",
         "hotsale": "Pedales con descuento",
         "elmininar": "Eliminar",
-        "editar": "Editar"
+        "editar": "Editar",
+        "phone": "Teléfono"
 
 
     },
     "en": {
         "signup": "SignUp",
+        "nombre": "Name",
         "guardar": "Save",
         "lenguaje": "Select Languaje",
         "Lenguajenav": "Languaje",
         "signin": "SignIn",
         "remail": "Repeat Email",
+        "rpass": "Repeat Password",
         "getyour": "What do you looking for?",
         "hotsale": "Hot Sale Pedals",
         "eliminar": "Delete",
-        "editar": "Edit"
+        "editar": "Edit",
+        "phone": "Phone"
     }
 }
